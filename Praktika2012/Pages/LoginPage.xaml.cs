@@ -31,6 +31,7 @@ namespace Praktika2012.Pages
                 MessageBox.Show("Error");
                 return;
             }
+            NavigationService.Navigate(new MasterMainPage());
             var encoder = new MessagingToolkit.QRCode.Codec.QRCodeEncoder();
             var image = encoder.Encode($"{loggedUser.Name} {loggedUser.Phonenumber}");
 

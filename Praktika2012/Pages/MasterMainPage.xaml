@@ -9,6 +9,23 @@
       Title="MasterMainPage">
 
     <Grid>
-        
+        <DataGrid x:Name="DGOrders" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Consumables" Binding="{Binding ConsumableList}"/>
+                <DataGridTemplateColumn Header="consumables v2">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding OrderConsumables}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name" 
+                                                        Binding="{Binding Consumables.Name}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

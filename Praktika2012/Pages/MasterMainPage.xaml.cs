@@ -23,6 +23,7 @@ namespace Praktika2012.Pages
         public MasterMainPage()
         {
             InitializeComponent();
+            DGOrders.ItemsSource = App.DB.Order.ToList();
         }
     }
 }
